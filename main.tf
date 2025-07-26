@@ -141,6 +141,7 @@ resource "aws_codepipeline" "pipeline" {
       ConnectionArn    = "arn:aws:codeconnections:ap-south-1:754724220225:connection/bfc918b9-195c-4d78-bb4d-62d1d2f88134"
       FullRepositoryId = "Pragnyat/devopsassg1"
       BranchName       = "main"
+      }
     }
   }
 
