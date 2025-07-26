@@ -134,13 +134,14 @@ resource "aws_codepipeline" "pipeline" {
       name             = "GitHub_Source"
       category         = "Source"
       owner            = "ThirdParty"
-      provider         = "CodeStarSourceConnection"
+      provider         = "GitHub"
       version          = "1"
       output_artifacts = ["source_output"]
       configuration = {
-      ConnectionArn    = "arn:aws:codeconnections:ap-south-1:754724220225:connection/bfc918b9-195c-4d78-bb4d-62d1d2f88134"
-      FullRepositoryId = "Pragnyat/devopsassg1"
-      BranchName       = "main"
+        Owner      = var.github_owner
+        Repo       = var.github_repo
+        Branch     = var.github_branch
+        OAuthToken = var.github_token
       }
     }
   }
